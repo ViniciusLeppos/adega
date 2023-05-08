@@ -1,5 +1,5 @@
 
-npcgold = float(5000)
+nnpcgold = float(5000)
 playergold = float(200)
 potato = int(0)
 rice = int(0)
@@ -9,7 +9,7 @@ riceprice = int(80)
 meatprice = int(50)
 
 while True:
-    print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nNPC\nOuro:', npcgold,'\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold)
+    print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nNPC\nOuro:', npcgold,'\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold,'\nCarne: ',meat, '   Arroz: ', rice, '   Batata: ', potato)
     input_menu = int(input())
 
     if input_menu == 1:
@@ -32,10 +32,48 @@ while True:
 
             else:
                 print('Você não tem saldo suficiente.\n\n\n')
+        if input_compra ==2:
+            print('\n\nQuantos quilos de arroz deseja?\n\n\n')
+            buyrice = int(input())
+            ricefinal = int(buyrice * riceprice)
+
+            if playergold >= ricefinal:
+                rice += buyrice
+                playergold -= ricefinal
+                npcgold += ricefinal
+                print('Você adquiriu', buyrice, 'quilos de arroz\n\n\nSaldo:', playergold)
+                print('Saldo do NPC:', npcgold, '\n\n\n')
+                continue
+
+            else:
+                print('Você não tem saldo suficiente.\n\n\n')
+        if input_compra ==3:
+            print('\n\nQuantos pedaços de carne deseja?\n\n\n')
+            buymeat = int(input())
+            meatfinal = int(buymeat * meatprice)
+
+            if playergold >= meatfinal:
+                meat += buymeat
+                playergold -= meatfinal
+                npcgold += meatfinal
+                print('Você adquiriu', buymeat, 'pedaços de carne\n\n\nSaldo:', playergold)
+                print('Saldo do NPC:', npcgold, '\n\n\n')
+                continue
+
+            else:
+                print('Você não tem saldo suficiente.\n\n\n')
 
     if input_menu == 2:
         # Lógica para vender itens
         continue
+
+    elif input_menu == 3:
+        # Lógica para cozinhar
+        continue
+
+    else:
+        print('Opção inválida.\n\n\n')
+
 
     elif input_menu == 3:
         # Lógica para cozinhar
