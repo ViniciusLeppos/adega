@@ -1,0 +1,46 @@
+
+
+npcgold = float(5000)
+playergold = float(200)
+potato = int(0)
+rice = int(0)
+meat = int(0)
+potprice = int(10)
+riceprice = int(80)
+meatprice = int(50)
+
+while True:
+    print('NPC\nOuro:', npcgold,'\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold)
+    input_menu = int(input())
+
+    if input_menu == 1:
+        print('IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\nNPC\nOuro:', npcgold,'\n\nAgora me diga...qual ingrediente deseja comprar?\n1.Batata (10$)\n2.Arroz (80$)\n3.Carne (''50$)\n\n\nSeu saldo:', playergold)
+        input_compra = int(input())
+
+
+        if input_compra == 1:
+            print('\n\nQuantas batatas deseja?\n\n\n')
+            buypotato= int(input())
+            potatofinal = int(buypotato * potprice)
+
+            if playergold >= potatofinal:
+                potato += buypotato
+                playergold -= potatofinal
+                npcgold += potatofinal
+                print('Você adquiriu', buypotato, 'batatas\n\n\nSaldo:', playergold)
+                print('Saldo do NPC:', npcgold, '\n\n\n')
+                continue
+
+            else:
+                print('Você não tem saldo suficiente.\n\n\n')
+
+    if input_menu == 2:
+        # Lógica para vender itens
+        continue
+
+    elif input_menu == 3:
+        # Lógica para cozinhar
+        continue
+
+    else:
+        print('Opção inválida.\n\n\n')
