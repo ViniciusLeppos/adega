@@ -1,5 +1,5 @@
 
-nnpcgold = float(5000)
+npcgold = float(5000)
 playergold = float(200)
 potato = int(0)
 rice = int(0)
