@@ -1,5 +1,4 @@
 
-
 npcgold = float(5000)
 playergold = float(200)
 potato = int(0)
@@ -10,11 +9,11 @@ riceprice = int(80)
 meatprice = int(50)
 
 while True:
-    print('NPC\nOuro:', npcgold,'\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold)
+    print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nNPC\nOuro:', npcgold,'\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold)
     input_menu = int(input())
 
     if input_menu == 1:
-        print('IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\nNPC\nOuro:', npcgold,'\n\nAgora me diga...qual ingrediente deseja comprar?\n1.Batata (10$)\n2.Arroz (80$)\n3.Carne (''50$)\n\n\nSeu saldo:', playergold)
+        print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nNPC\nOuro:', npcgold,'\n\nAgora me diga...qual ingrediente deseja comprar?\n1.Batata (10$)\n2.Arroz (80$)\n3.Carne (''50$)\n\n\nSeu saldo:', playergold)
         input_compra = int(input())
 
 
