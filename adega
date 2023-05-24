@@ -15,9 +15,6 @@ pricearrozcarne = int(180)
 pricecarnebatata = int(90)
 pricepratododia = int(250)
 
-#if npcgold <= 50:
-    #print('VOCE VENCEu')
-
 if npcgold >= 0:
 
     while True:
@@ -359,3 +356,5 @@ if npcgold >= 0:
 
 
             continue
+
+
