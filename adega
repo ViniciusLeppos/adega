@@ -9,7 +9,7 @@ meatprice = int(50)
 batataarroz = int(0)
 arrozcarne = int(0)
 carnebatata = int(0)
-pratododia = int(0)
+pratododia = int(10)
 pricebatataarroz = int(120)
 pricearrozcarne = int(180)
 pricecarnebatata = int(90)
@@ -203,7 +203,7 @@ if npcgold >= 0:
             print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nÉ preciso pagar uma taxa especifica para cada receita que desejar fazer na panela! Capitalismo não é facil mesmo hahahaha \n\n\n1. Fazer Arroz e Carne (30)\n\n2.Fazer Arroz e Batata (8)\n\n3.Fazer Carne e batata (16)\n\n4.Prato do dia (35)\n\nSeu saldo:', playergold, '\nArroz:', rice, '  Carne:', meat, '  Batata:', potato, '\n')
 
             input_cozinha = input()
-
+#Rever a questão do caso do jogador que não tem dinheiro para taixa. Pensar num mecanismo melhor
             input_cozinha = int(input_cozinha)
 
             if input_cozinha == 1:
@@ -222,8 +222,10 @@ if npcgold >= 0:
 
                     print('Você não tem ingredientes suficientes')
 
+                if playergold < tx1:
+                    print('Você não tem saldos suficientes')
 
-                if rice - input_arrozecarne >= 0 and meat - input_arrozecarne >= 0:
+                if rice - input_arrozecarne >= 0 and meat - input_arrozecarne >= 0 and playergold >= tx1:
 
                     npcgold += tx1
 
@@ -237,13 +239,7 @@ if npcgold >= 0:
 
                     meat -= input_arrozecarne
 
-                    if playergold <= 0:
 
-                        print('Você não tem saldos suficientes')
-
-                        npcgold -= tx1
-
-                        playergold += tx1
 
 
 
@@ -263,11 +259,15 @@ if npcgold >= 0:
 
                     print('Você não tem ingredientes suficientes')
 
-                if rice - input_arrozbatata >= 0 and potato - input_arrozbatata >= 0:
+                if playergold < tx2:
+                    print('Você não tem saldos suficientes')
+
+                if rice - input_arrozbatata >= 0 and potato - input_arrozbatata >= 0 and playergold >= tx2:
 
                     npcgold += tx2
 
                     playergold -= tx2
+
 
                     print('Você adquiriu ', input_arrozbatata, 'pratos de arroz e batata.', ' Você pagou ', tx2,
                           '$ de taxa! Muito obrigado!')
@@ -277,13 +277,6 @@ if npcgold >= 0:
                     rice -= input_arrozbatata
 
                     potato -= input_arrozbatata
-
-                    if playergold <= 0:
-                        print('Você não tem saldos suficientes')
-
-                        npcgold -= tx2
-
-                        playergold += tx2
 
 
 
@@ -303,11 +296,16 @@ if npcgold >= 0:
 
                     print('Você não tem ingredientes suficientes')
 
-                if potato - input_batatacarne >= 0 and meat - input_batatacarne >= 0:
+                if playergold < tx3:
+                    print('Você não tem saldos suficientes')
+
+                if potato - input_batatacarne >= 0 and meat - input_batatacarne >= 0 and playergold >= tx3:
 
                     npcgold += tx3
 
                     playergold -= tx3
+
+
                     print('Você adquiriu ', input_batatacarne, 'pratos de carne e batata.', ' Você pagou ', tx3,
                           '$ de taxa! Muito obrigado!')
 
@@ -317,13 +315,6 @@ if npcgold >= 0:
 
                     meat -= input_batatacarne
 
-                    if playergold <= 0:
-
-                        print('Você não tem saldos suficientes')
-
-                        npcgold -= tx3
-
-                        playergold += tx3
 
 
 
@@ -344,19 +335,22 @@ if npcgold >= 0:
 
                     print('Você não tem ingredientes suficientes')
 
+                if playergold < tx4:
+                    print('Você não tem saldos suficientes')
 
-                if potato - input_plate >= 0 and meat - input_plate >= 0 and rice - input_plate >= 0:
+                if potato - input_plate >= 0 and meat - input_plate >= 0 and rice - input_plate >= 0 and playergold >= tx4:
                     npcgold += tx4
                     playergold -= tx4
+
                     print('Você adquiriu ', input_plate, 'pratos do dia.', ' Você pagou ', tx4, '$ de taxa! Muito obrigado!')
                     pratododia += input_plate
                     potato -= input_plate
                     meat -= input_plate
                     rice -= input_plate
-                    if playergold <= 0:
-                        print('Você não tem saldos suficientes')
-                        npcgold -= tx4
-                        playergold += tx4
+
 
 
             continue
+
+if npcgold <= 50:
+    print('VOCE VENCEu')
