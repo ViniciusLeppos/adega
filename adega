@@ -15,9 +15,17 @@ pricearrozcarne = int(180)
 pricecarnebatata = int(90)
 pricepratododia = int(250)
 
+#if npcgold <= 50:
+    #print('VOCE VENCEu')
+
 if npcgold >= 0:
 
     while True:
+
+        if npcgold <= 50:
+            print ('\n V O C E  V E N C E U')
+            break
+
 
         print(' X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X\n X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X \nNPC\nOuro:', npcgold, '\n\nBem-vindo à adega das delícias! Como posso te ajudar?\n\n\n1.Comprar\n2.Vender\n3.Cozinhar\n\n\nSeu saldo:', playergold, '\nCarne: ', meat, '   Arroz: ', rice, '   Batata: ', potato)
 
@@ -351,6 +359,3 @@ if npcgold >= 0:
 
 
             continue
-
-if npcgold <= 50:
-    print('VOCE VENCEu')
