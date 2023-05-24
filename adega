@@ -20,7 +20,7 @@ if npcgold >= 0:
     while True:
 
         if npcgold <= 50:
-            print ('\n V O C E  V E N C E U')
+            print ('\n  V O C E  V E N C E U')
             break
 
 
